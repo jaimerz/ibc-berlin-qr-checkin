@@ -1,6 +1,6 @@
 # IBC Berlin QR Check-In
 
-A web app for managing school or church years and tracking student movements via QR code scanning. Designed for real-time check-ins and class management, this app helps school or church leaders and admins efficiently monitor where students are throughout the year.
+A web app for managing church class and tracking student movements via QR code scanning. Designed for real-time check-ins and class management, this app helps school or church leaders and admins efficiently monitor where students are throughout the year.
 
 [View the App](https://icb-berlin-qr-checkin.web.app)
 
