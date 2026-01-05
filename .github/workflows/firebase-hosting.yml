@@ -37,5 +37,5 @@ jobs:
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
-          projectId: icb-berlin-qr-checkin
+          projectId: ibc-berlin-qr-checkin
           channelId: live
