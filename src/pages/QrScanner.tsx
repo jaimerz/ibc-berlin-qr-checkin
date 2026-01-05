@@ -88,7 +88,7 @@ const QrScannerPage: React.FC = () => {
 
       if (scanType === 'return') {
         if (!currentActivity) {
-          alert('⚠️ Participant is already at camp.');
+          alert('⚠️ Participant is already not in a class.');
           return Promise.resolve(false);
         }
 
@@ -145,7 +145,7 @@ const QrScannerPage: React.FC = () => {
     try {
       return await getParticipantCurrentActivity(participantId);
     } catch (err) {
-      console.error('Error getting current activity:', err);
+      console.error('Error getting current class:', err);
       return null;
     }
   };
@@ -176,12 +176,12 @@ const QrScannerPage: React.FC = () => {
         <CardContent className="p-6">
           <div className="text-center py-8">
             <AlertCircle className="h-12 w-12 text-amber-400 mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-gray-900 mb-2">No Activities Available</h3>
+            <h3 className="text-lg font-medium text-gray-900 mb-2">No Classes Available</h3>
             <p className="text-gray-500 mb-6">
-              You need to create at least one activity before you can start scanning QR codes.
+              You need to create at least one class before you can start scanning QR codes.
             </p>
             <Button as="a" href={`/activities/new/${eventId}`}>
-              Create Activity
+              Create Class
             </Button>
           </div>
         </CardContent>
@@ -209,8 +209,8 @@ const QrScannerPage: React.FC = () => {
                 onChange={(e) => setScanType(e.target.value as 'departure' | 'return' | '')}
                 options={[
                   { value: '', label: '-- Select Scan Type --' },
-                  { value: 'departure', label: 'Departure (Leaving Camp)' },
-                  { value: 'return', label: 'Return (Coming Back to Camp)' },
+                  { value: 'departure', label: 'Checked in to class' },
+                  { value: 'return', label: 'Checked out (picked up)' },
                 ]}
               />
 
@@ -221,7 +221,7 @@ const QrScannerPage: React.FC = () => {
                   value={selectedActivityId}
                   onChange={(e) => setSelectedActivityId(e.target.value)}
                   options={[
-                    { value: '', label: '-- Select Activity --' },
+                    { value: '', label: '-- Select Class --' },
                     ...activities.map((activity) => ({
                       value: activity.id,
                       label: activity.name,
@@ -248,7 +248,7 @@ const QrScannerPage: React.FC = () => {
             <CardContent className="p-6 text-yellow-800">
               <div className="flex items-center space-x-3">
                 <AlertCircle className="h-5 w-5 text-yellow-500" />
-                <p>Please select an activity before scanning departures.</p>
+                <p>Please select a class before scanning departures.</p>
               </div>
             </CardContent>
           </Card>

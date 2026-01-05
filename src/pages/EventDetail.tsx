@@ -198,7 +198,7 @@ const EventDetail: React.FC = () => {
                 <div className="bg-green-50 p-4 rounded-lg">
                   <div className="flex items-center mb-2">
                     <Users className="h-5 w-5 text-green-500 mr-2" />
-                    <h4 className="font-medium text-green-800">At Camp Now</h4>
+                    <h4 className="font-medium text-green-800">Not in a class now</h4>
                   </div>
                   <p className="text-2xl font-bold text-green-900">{participantsAtCamp.length}</p>
                 </div>
@@ -233,7 +233,7 @@ const EventDetail: React.FC = () => {
             <Card>
               <CardHeader>
                 <CardTitle>
-                  At Camp ({filteredAtCamp.length} / {participantsAtCamp.length})
+                  Not in a class ({filteredAtCamp.length} / {participantsAtCamp.length})
                 </CardTitle>
               </CardHeader>
               <CardContent>
