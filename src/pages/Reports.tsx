@@ -165,7 +165,7 @@ const Reports: React.FC = () => {
             <div className="p-3 bg-white border border-gray-200 rounded-md flex justify-between items-center hover:bg-gray-50">
               <div className="flex items-center">
                 <Users className="h-5 w-5 text-green-600 mr-2" />
-                <p className="font-medium text-gray-800">At Camp</p>
+                <p className="font-medium text-gray-800">Not in a class</p>
               </div>
               <span className="text-sm font-medium text-gray-600">{participantsAtCamp.length}</span>
             </div>

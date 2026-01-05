@@ -52,7 +52,7 @@ const Header: React.FC = () => {
             <div className="flex-shrink-0 flex items-center">
               <Link to="/" className="flex items-center">
                 <Calendar className="h-8 w-8 text-teal-600" />
-                <span className="ml-2 text-xl font-bold text-gray-900">CampTrack</span>
+                <span className="ml-2 text-xl font-bold text-gray-900">CheckIn Track</span>
               </Link>
             </div>
             

@@ -10,11 +10,11 @@ const Footer: React.FC = () => {
         <div className="md:flex md:items-center md:justify-between">
           <div className="flex items-center">
             <Calendar className="h-8 w-8 text-teal-600" />
-            <span className="ml-2 text-xl font-bold text-gray-900">CampTrack</span>
+            <span className="ml-2 text-xl font-bold text-gray-900">CheckIn Track</span>
           </div>
           <div className="mt-4 md:mt-0">
             <p className="text-center text-sm text-gray-500">
-              &copy; {currentYear} CampTrack. All rights reserved.
+              &copy; {currentYear} CheckIn Track. All rights reserved.
             </p>
           </div>
         </div>

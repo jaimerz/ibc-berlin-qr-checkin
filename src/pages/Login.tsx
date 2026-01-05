@@ -35,7 +35,7 @@ const Login: React.FC = () => {
           <Calendar className="h-12 w-12 text-teal-600" />
         </div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Sign in to CampTrack
+          Sign in to CheckIn Track
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
           Or{' '}
