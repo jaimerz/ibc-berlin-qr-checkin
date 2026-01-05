@@ -61,10 +61,10 @@ const ManageActivities: React.FC = () => {
       setName('');
       setDescription('');
       setLocation('');
-      showMessage('Activity created!', 'success');
+      showMessage('Class created!', 'success');
     } catch (err: any) {
       console.error(err);
-      const msg = err.message?.includes('already exists') ? err.message : 'Failed to create activity';
+      const msg = err.message?.includes('already exists') ? err.message : 'Failed to create class';
       showMessage(msg, 'error');
     }
   };
@@ -84,13 +84,13 @@ const ManageActivities: React.FC = () => {
 
   const handleDelete = (id: string) => {
     openConfirmModal(
-      'Are you sure you want to delete this activity? All participant records (logs) linked to it will also be permanently deleted.',
+      'Are you sure you want to delete this class? All participant records (logs) linked to it will also be permanently deleted.',
       async () => {
         if (!activeEvent) return;
         await deleteActivity(activeEvent.id, id);
         const updated = await getActivitiesByEvent(activeEvent.id);
         setActivities(updated);
-        showMessage('Activity deleted.', 'success');
+        showMessage('Class deleted.', 'success');
         setModalOpen(false);
     });
   };
@@ -98,7 +98,7 @@ const ManageActivities: React.FC = () => {
   const handleBulkAction = () => {
     if (bulkAction === 'delete' && selectedIds.length && activeEvent) {
       openConfirmModal(
-        `Are you sure you want to delete ${selectedIds.length} selected activities? This will also delete all logs linked to these activities.`,
+        `Are you sure you want to delete ${selectedIds.length} selected classes? This will also delete all logs linked to these classes.`,
         async () => {
           for (const id of selectedIds) {
             await deleteActivity(activeEvent.id, id);
@@ -107,7 +107,7 @@ const ManageActivities: React.FC = () => {
           setActivities(updated);
           setSelectedIds([]);
           setBulkAction('');
-          showMessage('Activities deleted.', 'success');
+          showMessage('Classes deleted.', 'success');
           setModalOpen(false);
       });
     }
@@ -121,7 +121,7 @@ const ManageActivities: React.FC = () => {
   return (
     <AuthGuard requiredRole="admin">
       <div className="space-y-6">
-        <h1 className="text-2xl font-bold text-gray-900">Manage Activities</h1>
+        <h1 className="text-2xl font-bold text-gray-900">Manage Classes</h1>
 
         {message && (
           <div className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 shadow-lg text-sm px-4 py-2 rounded-md border transition-opacity duration-300 ${
@@ -141,14 +141,14 @@ const ManageActivities: React.FC = () => {
           </div>
         </Modal>
 
-        <Modal isOpen={!!editActivity} onClose={() => setEditActivity(null)} title="Edit Activity">
+        <Modal isOpen={!!editActivity} onClose={() => setEditActivity(null)} title="Edit Class">
           <div className="space-y-4">
             <input
               type="text"
               value={editName}
               onChange={(e) => setEditName(e.target.value)}
               className="w-full border p-2 rounded mt-4"
-              placeholder="Activity name"
+              placeholder="Class name"
             />
             <input
               type="text"
@@ -176,7 +176,7 @@ const ManageActivities: React.FC = () => {
                 const updated = await getActivitiesByEvent(activeEvent.id);
                 setActivities(updated);
                 setEditActivity(null);
-                showMessage('Activity updated.', 'success');
+                showMessage('Class updated.', 'success');
               }}>
                 Save
               </Button>
@@ -185,13 +185,13 @@ const ManageActivities: React.FC = () => {
         </Modal>
 
         <Card>
-          <CardHeader><CardTitle>Add Activity</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Add Class</CardTitle></CardHeader>
           <CardContent className="space-y-4">
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Activity name"
+              placeholder="Class name"
               className="w-full border p-2 rounded"
             />
             <input
@@ -208,7 +208,7 @@ const ManageActivities: React.FC = () => {
               placeholder="Location"
               className="w-full border p-2 rounded"
             />
-            <Button onClick={handleAdd}>Add Activity</Button>
+            <Button onClick={handleAdd}>Add Class</Button>
           </CardContent>
         </Card>
 
@@ -244,7 +244,7 @@ const ManageActivities: React.FC = () => {
               }}
               className="h-4 w-4"
             />
-            <CardTitle>All Activities</CardTitle>
+            <CardTitle>All Classes</CardTitle>
           </CardHeader>
           <CardContent>
             {activities.length > 0 ? (
@@ -278,7 +278,7 @@ const ManageActivities: React.FC = () => {
                 ))}
               </div>
             ) : (
-              <p className="text-sm text-gray-600">No activities found.</p>
+              <p className="text-sm text-gray-600">No classes found.</p>
             )}
           </CardContent>
         </Card>

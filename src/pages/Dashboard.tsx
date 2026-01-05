@@ -52,7 +52,7 @@ const Dashboard: React.FC = () => {
           </CardHeader>
           <CardContent>
             <p className="text-gray-600">
-              You are logged in as a {user?.role === 'admin' ? 'Camp Administrator' : 'Camp Leader'}.
+              You are logged in as a {user?.role === 'admin' ? 'Administrator' : 'Leader'}.
             </p>
           </CardContent>
         </Card>
@@ -70,7 +70,7 @@ const Dashboard: React.FC = () => {
                   <QrCode className="h-12 w-12 text-teal-500 mb-4" />
                   <h3 className="font-medium text-gray-900">Scan QR Codes</h3>
                   <p className="text-sm text-gray-500 text-center mt-2">
-                    Register participants for activities
+                    Register participants for classes
                   </p>
                 </CardContent>
               </Card>
@@ -85,7 +85,7 @@ const Dashboard: React.FC = () => {
                     <Users className="h-12 w-12 text-purple-500 mb-4" />
                     <h3 className="font-medium text-gray-900">Manage Participants</h3>
                     <p className="text-sm text-gray-500 text-center mt-2">
-                      Add, edit or remove camp participants
+                      Add, edit or remove participants
                     </p>
                   </CardContent>
                 </Card>
@@ -95,9 +95,9 @@ const Dashboard: React.FC = () => {
                 <Card className="h-full transition-transform hover:shadow-md hover:-translate-y-1">
                   <CardContent className="flex flex-col items-center justify-center p-6">
                     <Activity className="h-12 w-12 text-amber-500 mb-4" />
-                    <h3 className="font-medium text-gray-900">Manage Activities</h3>
+                    <h3 className="font-medium text-gray-900">Manage Classes</h3>
                     <p className="text-sm text-gray-500 text-center mt-2">
-                      Create and organize camp activities
+                      Create and organize classes
                     </p>
                   </CardContent>
                 </Card>

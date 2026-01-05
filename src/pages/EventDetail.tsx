@@ -190,7 +190,7 @@ const EventDetail: React.FC = () => {
                 <div className="bg-amber-50 p-4 rounded-lg">
                   <div className="flex items-center mb-2">
                     <MapPin className="h-5 w-5 text-amber-500 mr-2" />
-                    <h4 className="font-medium text-amber-800">Activities</h4>
+                    <h4 className="font-medium text-amber-800">Classes</h4>
                   </div>
                   <p className="text-2xl font-bold text-amber-900">{activities.length}</p>
                 </div>
@@ -375,7 +375,7 @@ const EventDetail: React.FC = () => {
 
           <Card>
             <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle>All Activities</CardTitle>              
+              <CardTitle>All Classes</CardTitle>
             </CardHeader>
             <CardContent>
               {activities.length > 0 ? (
@@ -410,7 +410,7 @@ const EventDetail: React.FC = () => {
                   <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
                   <h3 className="text-lg font-medium text-gray-900 mb-2">No Activities Yet</h3>
                   <p className="text-gray-500">
-                    Activities will appear here once an admin adds them.
+                    Classes will appear here once an admin adds them.
                   </p>
                 </div>
               )}
