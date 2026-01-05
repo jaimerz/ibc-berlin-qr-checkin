@@ -363,7 +363,7 @@ const EventDetail: React.FC = () => {
     },
     {
       id: 'activities',
-      label: 'Activities',
+      label: 'Classes',
       content: (
         <div className="space-y-6">
           <div className="flex justify-end">
@@ -408,7 +408,7 @@ const EventDetail: React.FC = () => {
               ) : (
                 <div className="text-center py-8">
                   <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">No Activities Yet</h3>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">No Classes Yet</h3>
                   <p className="text-gray-500">
                     Classes will appear here once an admin adds them.
                   </p>
